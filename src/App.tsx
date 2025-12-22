@@ -4,6 +4,7 @@ import AboutCard from './components/AboutCard';
 import ForestTimer from './components/ForestTimer';
 import GiftSection from './components/GiftSection';
 import HeroSection from './components/HeroSection';
+import Slider from './components/Slider';
 import './style.css';
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
               <HeroSection />
 
               <AboutCard />
+
+              <Slider />
 
               <GiftSection />
 
