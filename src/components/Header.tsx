@@ -1,15 +1,21 @@
+import {Link} from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+
 const Header = () => {
+
+    const location = useLocation();
+
     return(
         <header className="header">
             <div className="header-logo">
-                ❄️ The gifts
+                <Link to="/" className="nav-link">❄️ The gifts</Link>
             </div>
 
             <nav className="header-nav">
-                <a href="#" className="nav-link">Gifts</a>
-                <a href="#" className="nav-link">About</a>
-                <a href="#" className="nav-link">Best</a>
-                <a href="#" className="nav-link">Contacts</a>
+                <Link to="/gifts" className={`nav-link ${location.pathname === '/gifts' ? 'active' : ''}`}>Gifts</Link>
+                <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>About</Link>
+                <Link to="/gifts" className="nav-link">Best</Link>
+                <Link to="/gifts" className="nav-link">Contacts</Link>
             </nav>
         </header>
     );

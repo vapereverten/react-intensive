@@ -1,37 +1,29 @@
+import AboutCard from './components/AboutCard';
+import { Routes, Route, useLocation } from 'react-router-dom'; 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import AboutCard from './components/AboutCard';
-import ForestTimer from './components/ForestTimer';
-import GiftSection from './components/GiftSection';
-import HeroSection from './components/HeroSection';
-import Slider from './components/Slider';
+import Home from './pages/Home';   
+import Gifts from './pages/Gifts';
 import './style.css';
 
 function App() {
+
+  const location = useLocation();
+
   return (
-    
-    <body className='body-background'>
-      <div className="wrapper">
-          
+      <div className="wrapper">  
           <Header /> 
 
-          <main className="main-content">
-              
-              <HeroSection />
-
-              <AboutCard />
-
-              <Slider />
-
-              <GiftSection />
-
-              <ForestTimer />
-          </main>
+           <main className={`main-content ${location.pathname === '/' ? 'main-content-home' : 'main-content-gifts'}`}>
+              <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/gifts" element={<Gifts />} />
+                  <Route path="/about" element={<AboutCard />} />
+              </Routes>
+            </main>
 
           <Footer />
-          
       </div>
-    </body>
   );
 }
 

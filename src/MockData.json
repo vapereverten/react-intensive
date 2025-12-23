@@ -1,0 +1,222 @@
+[
+  {
+    "name": "Console.log Guru",
+    "description": "The only tool you need to debug your life and code.",
+    "type": "forWork",
+    "superpowers": {
+      "live": 500,
+      "create": 200,
+      "love": 100,
+      "dream": 300
+    }
+  },
+  {
+    "name": "Hydration Bot",
+    "description": "Smart reminder to drink water before you turn into a cactus.",
+    "type": "forHealth",
+    "superpowers": {
+      "live": 500,
+      "create": 100,
+      "love": 400,
+      "dream": 200
+    }
+  },
+  {
+    "name": "Merge Master",
+    "description": "Resolves all conflicts in code and relationships instantly.",
+    "type": "forWork",
+    "superpowers": {
+      "live": 200,
+      "create": 500,
+      "love": 300,
+      "dream": 100
+    }
+  },
+  {
+    "name": "Spontaneous Coding",
+    "description": "A burst of inspiration when you least expect it.",
+    "type": "forHarmony",
+    "superpowers": {
+      "live": 100,
+      "create": 500,
+      "love": 200,
+      "dream": 500
+    }
+  },
+  {
+    "name": "Bug Slayer",
+    "description": "Automatically detects and squashes bugs before production.",
+    "type": "forWork",
+    "superpowers": {
+      "live": 400,
+      "create": 300,
+      "love": 100,
+      "dream": 200
+    }
+  },
+  {
+    "name": "Posture Police",
+    "description": "Gently reminds you to sit up straight.",
+    "type": "forHealth",
+    "superpowers": {
+      "live": 400,
+      "create": 100,
+      "love": 500,
+      "dream": 100
+    }
+  },
+  {
+    "name": "Zen Keyboard",
+    "description": "Silent mechanical switches for peaceful coding sessions.",
+    "type": "forHarmony",
+    "superpowers": {
+      "live": 200,
+      "create": 300,
+      "love": 200,
+      "dream": 400
+    }
+  },
+  {
+    "name": "Deadline Crusher",
+    "description": "Time-warping device to finish tasks 2x faster.",
+    "type": "forWork",
+    "superpowers": {
+      "live": 300,
+      "create": 500,
+      "love": 100,
+      "dream": 200
+    }
+  },
+  {
+    "name": "Eye Saver Pro",
+    "description": "Filters blue light and reminds you to blink.",
+    "type": "forHealth",
+    "superpowers": {
+      "live": 500,
+      "create": 200,
+      "love": 300,
+      "dream": 100
+    }
+  },
+  {
+    "name": "Meeting Skipper",
+    "description": "Generates a believable excuse to skip useless calls.",
+    "type": "forWork",
+    "superpowers": {
+      "live": 200,
+      "create": 200,
+      "love": 100,
+      "dream": 500
+    }
+  },
+  {
+    "name": "Vitamin C Boost",
+    "description": "Immunity shield against office flu season.",
+    "type": "forHealth",
+    "superpowers": {
+      "live": 500,
+      "create": 100,
+      "love": 200,
+      "dream": 100
+    }
+  },
+  {
+    "name": "Lo-Fi Radio",
+    "description": "Infinite stream of chill beats to code to.",
+    "type": "forHarmony",
+    "superpowers": {
+      "live": 200,
+      "create": 200,
+      "love": 400,
+      "dream": 500
+    }
+  },
+  {
+    "name": "Syntax Highlighter",
+    "description": "Makes your real life as colorful as your IDE.",
+    "type": "forWork",
+    "superpowers": {
+      "live": 100,
+      "create": 400,
+      "love": 200,
+      "dream": 300
+    }
+  },
+  {
+    "name": "Sleep Optimizer",
+    "description": "Ensures 4 hours of sleep feel like 8.",
+    "type": "forHealth",
+    "superpowers": {
+      "live": 400,
+      "create": 100,
+      "love": 300,
+      "dream": 500
+    }
+  },
+  {
+    "name": "Incense Sticks",
+    "description": "Fills the room with the scent of success.",
+    "type": "forHarmony",
+    "superpowers": {
+      "live": 200,
+      "create": 100,
+      "love": 300,
+      "dream": 400
+    }
+  },
+  {
+    "name": "StackOverflow Gold",
+    "description": "Instant answers to all your copy-paste needs.",
+    "type": "forWork",
+    "superpowers": {
+      "live": 200,
+      "create": 500,
+      "love": 200,
+      "dream": 300
+    }
+  },
+  {
+    "name": "Yoga Mat",
+    "description": "For stretching after 12 hours of sitting.",
+    "type": "forHealth",
+    "superpowers": {
+      "live": 500,
+      "create": 100,
+      "love": 300,
+      "dream": 200
+    }
+  },
+  {
+    "name": "Tea Ceremony Set",
+    "description": "Ritualistic brewing to calm your nerves.",
+    "type": "forHarmony",
+    "superpowers": {
+      "live": 300,
+      "create": 100,
+      "love": 400,
+      "dream": 400
+    }
+  },
+  {
+    "name": "Noise Cancellor",
+    "description": "Blocks out open-space chatter completely.",
+    "type": "forWork",
+    "superpowers": {
+      "live": 200,
+      "create": 300,
+      "love": 100,
+      "dream": 400
+    }
+  },
+  {
+    "name": "Digital Detox",
+    "description": "A box that locks your phone for 2 hours.",
+    "type": "forHealth",
+    "superpowers": {
+      "live": 400,
+      "create": 100,
+      "love": 500,
+      "dream": 100
+    }
+  }
+]

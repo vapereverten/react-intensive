@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const HeroSection = () => {
     return(
         <section className="hero-section">
@@ -8,7 +10,7 @@ const HeroSection = () => {
                         Gift yourself <br /> the magic of new possibilities
                     </h1>
 
-                    <a href="#" className="hero-section-button">Explore Magicial Gifts</a>
+                    <Link to="/gifts" className="hero-section-button">Explore Magicial Gifts</Link>
 
                     <p className="hero-section-aditional-text">and Happy New Year</p>
                 </div>

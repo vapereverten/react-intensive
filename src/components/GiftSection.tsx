@@ -1,60 +1,121 @@
-import workImg from '../img/gift-for-work.png';
-import healthImg from '../img/gift-for-health.png';
-import harmonyImg from '../img/gift-for-harmony.png';
+import { IGift } from '../types/IGift';       
+import { GiftsEnum } from '../types/GiftsEnum';       
+import { GiftsDetails } from '../types/GiftDetails'; 
+import mockData from '../MockData.json';
+
+import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
+
+const RetriveData = (count?: number | null, type?: GiftsEnum | null): IGift[] => {
+    let gifts: IGift[] = mockData as unknown as IGift[];
+
+    if (type) {
+        gifts = gifts.filter(gift => gift.type === type);
+    }
+
+    if (count) {
+        return gifts.slice(0, count);
+    }
+    return gifts;
+}
+
+const GiftsBlock = ({ gifts }: { gifts: IGift[] }) => {
+    return (
+        <div className="gifts-grid">
+            {gifts.map((gift, index) => {
+                const details = GiftsDetails[gift.type];
+
+                if (!details) return null; 
+
+                return (
+                    <div key={index} className="gift-card">
+                        <div className="gift-image-box">
+                            <img 
+                                src={details.img} 
+                                alt={details.title} 
+                                className="gift-img" 
+                            />
+                        </div>
+                        <div className="gift-content-box">
+                            <h4 className={details.className}>
+                                {details.title}
+                            </h4>
+                            <h3 className="gift-name">{gift.name}</h3>
+                        </div>
+                    </div>
+                );
+            })}
+        </div>
+    );
+}
 
 const GiftSection = () => {
-    return(
-        <section className="gifts-section">
-            <div className="gifts-header">
-                <p className="gifts-caption">Best Gifts</p>
-                <h2 className="gifts-title">especially for you</h2>
-            </div>
+    const [filter, setFilter] = useState<GiftsEnum | null>(null);
+    const location = useLocation();
 
-            <div className="gifts-grid">
+    if( location.pathname === '/' ) {
+        const giftsData = RetriveData(4);
+        return(
+            <section className="gifts-section">
+                <div className="gifts-header">
+                    <p className="gifts-caption">Best Gifts</p>
+                    <h2 className="gifts-title">especially for you</h2>
+                </div>
+                <GiftsBlock gifts={giftsData} /> 
+            </section>
+        );
+    }
+
+    if( location.pathname === '/gifts' ) {
+
+        const filteredGifts = RetriveData(null, filter);
+
+        return(
+            <section className="gifts-section gifts-page-container">
                 
-                <div className="gift-card">
-                    <div className="gift-image-box">
-                        <img src={workImg} alt="gift-for-work" className="gift-img" />
-                    </div>
-                    <div className="gift-content-box">
-                        <h4 className="gift-category text-blue">For work</h4>
-                        <h3 className="gift-name">Console.log Guru</h3>
-                    </div>
+                <div className="gifts-page-header">
+                    <h1 className="gifts-page-title">
+                        Achieve health, harmony, and <br/> inner strength
+                    </h1>
                 </div>
 
-                <div className="gift-card">
-                    <div className="gift-image-box">
-                        <img src={healthImg} alt="gift-for-health" className="gift-img" />
-                    </div>
-                    <div className="gift-content-box">
-                        <h4 className="gift-category text-green">For health</h4>
-                        <h3 className="gift-name">Hydration Bot</h3>
-                    </div>
+                <div className="gifts-tabs">
+                    <button 
+                        className={`tab-btn ${filter === null ? 'active' : ''}`} 
+                        onClick={() => setFilter(null)}
+                    >
+                        All
+                    </button>                      
+
+                    <button 
+                        className={`tab-btn ${filter === GiftsEnum.forWork ? 'active' : ''}`} 
+                        onClick={() => setFilter(GiftsEnum.forWork)}
+                    >
+                        For Work
+                    </button>
+
+                    <button 
+                        className={`tab-btn ${filter === GiftsEnum.forHealth ? 'active' : ''}`} 
+                        onClick={() => setFilter(GiftsEnum.forHealth)}
+                    >
+                        For Health
+                    </button>
+
+                    <button 
+                        className={`tab-btn ${filter === GiftsEnum.forHarmony ? 'active' : ''}`} 
+                        onClick={() => setFilter(GiftsEnum.forHarmony)}
+                    >
+                        For Harmony
+                    </button>
                 </div>
 
-                <div className="gift-card">
-                    <div className="gift-image-box">
-                        <img src={workImg} alt="gift-for-work" className="gift-img" />
-                    </div>
-                    <div className="gift-content-box">
-                        <h4 className="gift-category text-blue">For work</h4>
-                        <h3 className="gift-name">Merge Master</h3>
-                    </div>
-                </div>
-
-                <div className="gift-card">
-                    <div className="gift-image-box">
-                        <img src={harmonyImg} alt="gift-for-harmony" className="gift-img" />
-                    </div>
-                    <div className="gift-content-box">
-                        <h4 className="gift-category text-pink">For harmony</h4>
-                        <h3 className="gift-name">Spontaneous Coding Philosopher</h3>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-    );
+                <GiftsBlock gifts={filteredGifts} /> 
+                
+            </section>
+        );
+    }
+    
+    return null; 
 };
 
 export default GiftSection;

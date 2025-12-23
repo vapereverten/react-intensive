@@ -17,16 +17,27 @@
 
 .main-content {
     background-color: #FF4646;
-    background-image: url('./img/bg-snow.png');
-    background-repeat: repeat;
-    background-size: 100% auto;
-    background-position: center top;
     border-radius: 20px; 
     padding-bottom: 0; 
     overflow: hidden;
     display: flex;
     flex-direction: column;
     flex: 1; 
+}
+
+.main-content-home {
+    background-image: url('./img/bg-snow.png');
+    background-repeat: repeat;
+    background-size: 100% auto;
+    background-position: center top;
+}
+
+.main-content-gifts {
+    background-image: url('./img/bg-garland.png');
+    background-repeat: no-repeat;
+
+    background-size: 100% auto;
+    background-position: center top;
 }
 
 .header {
@@ -67,15 +78,32 @@
     font-weight: 700;
     text-transform: uppercase;
     font-size: 12px; 
-    
     text-decoration: none; 
-    color: #000000;        
+
+    display: inline-flex;       
+    align-items: center;       
+    justify-content: center;    
     
-    transition: color 0.3s;
+    height: 40px;               
+    padding: 0 20px;            
+    border-radius: 12px;
+    
+    color: #000000;             
+    transition: all 0.3s ease; 
 }
 
-.nav-link:hover {
+.nav-link.active {
+    color: #FF4646; 
+    
+    background-color: rgba(255, 70, 70, 0.1); 
+
+    opacity: 1;
+    cursor: default;
+}
+
+.nav-link:hover:not(.active) {
     color: #FF4646;
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .hero-section {
@@ -689,4 +717,67 @@
     opacity: 0.5;
     cursor: not-allowed;
     border-color: rgba(255, 255, 255, 0.1);
+}
+
+.gifts-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+}
+
+.gifts-page-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.gifts-page-title {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 32px; 
+    font-weight: 600;
+    line-height: 130%;
+    color: #FFFFFF;
+    text-align: center;
+    text-transform: uppercase;
+    max-width: 426px;
+    width: 100%;
+    margin: 0;
+}
+
+.gifts-tabs {
+    display: flex;
+    gap: 8px; 
+    width: 100%;
+    max-width: 474px;
+    height: 40px;
+    justify-content: center;
+    margin-bottom: 40px; 
+}
+
+.tab-btn {
+    height: 40px;
+    padding: 12px 20px; 
+    border-radius: 12px;
+    border: none;
+    background: transparent; 
+    cursor: pointer;
+    
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 130%;
+    letter-spacing: 0.05em; 
+    text-transform: uppercase;
+    color: #FFFFFF; 
+
+    transition: background 0.3s ease;
+}
+
+.tab-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-btn.active {
+    background: rgba(255, 255, 255, 0.2); 
 }
